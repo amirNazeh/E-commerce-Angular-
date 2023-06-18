@@ -1,0 +1,17 @@
+<div class="card col" >
+    <div class="card-body">
+      <h5 class="card-title">{{sayHello()}}</h5>
+      <div class="row">
+        <img class="col-4" src="{{store.logo}}" >
+        <br>
+        <h6 class="col p-0" style="align-self: center;">{{store.name}}</h6>
+
+
+      </div>
+      <br>
+      <ul>
+
+        <li  *ngFor="let brance of store.branches" >{{brance}}</li>
+      </ul>
+    </div>
+  </div>

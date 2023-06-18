@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg bg-body-primary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link  " aria-current="page" routerLink="Home" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="Products" routerLinkActive="active">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="cart" routerLinkActive="active">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="addProduct" routerLinkActive="active">Add Product</a>
+          </li>
+          <li class="nav-item" [hidden]="userLogCheck">
+            <a class="nav-link" routerLink="user/singIn" routerLinkActive="active">Log In</a>
+          </li>
+          <li class="nav-item" [hidden]="!userLogCheck">
+            <a class="fa-solid fa-right-from-bracket " style="margin-top: 12px; margin-left: 12px;" (click)="logOutFunc()" ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<img src="assets/images/5.jpg" width="100%" height="80px" style="object-fit: cover;" >
+  <br>
+  <br>
+

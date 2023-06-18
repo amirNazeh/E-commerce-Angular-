@@ -1,0 +1,53 @@
+
+<div class="container-fluid">
+
+<div class="row ">
+  <div class="col-3 card "  *ngFor="let product of filteredProducts"  [ngClass]="{' bg-warning':product.quantity==1,}">
+
+    <div  (click)="prdDetails(product.id)" >
+    <img [src]="product.image"  class="img-fluid" alt="image"   ImgStyle="20px" radius1="30px">
+    <h4>{{product.name | uppercase}}</h4>
+    <p class=" btn-danger p-1" style="inline-size : fit-content;" *ngIf="product.discount>0; else outOfstockElem ">save {{product.discount}}%</p>
+    <ng-template #outOfstockElem></ng-template>
+    <h5>{{product.price|currency:'EGP'}}</h5>
+    <div>
+      <ng-container [ngSwitch]="product.quantity">
+      <ng-container *ngSwitchCase="0">out of stock </ng-container>
+      <ng-container *ngSwitchCase="1">last one item </ng-container>
+      <ng-container  *ngSwitchCase="2">last two item </ng-container>
+      <ng-container *ngSwitchDefault> in stock </ng-container>
+      <span>{{product.quantity}}</span>
+    </ng-container>
+    </div>
+
+    </div>
+    <div class=" d-flex justify-content-between">
+      <button class="btn btn-primary col-6 " [disabled]="product.quantity==0" (click)="buy(product)">Buy</button>
+      <a> <i class="fa-regular fa-heart" (click)="addTopCart(product)"></i></a>
+      <a><i class="fa-solid fa-gears" (click)="prdEdite(product.id)"></i></a>
+      </div>
+  </div>
+</div>
+<div class="row  m-2">
+  <h6 class="col-4 ">Add Credit Number : </h6>
+  <input class="col" value="{{formatNum|formats}}" [(ngModel)]="formatNum">
+</div>
+</div>
+
+<ng-template #added><i class="fa-solid fa-heart"></i></ng-template>
+<!-- <div class="card">
+  <div class="row ">
+    <img class=" col-3 img-fluid" src="{{product.image}}">
+    <div class="col-9 m-auto" >
+    <h5>{{product.name}}</h5>
+    <input type="number"  placeholder="{{product.quantity}}" >
+    <div class="row">
+     <h6 class="col">{{product.price|currency:'EGP '}}</h6>
+     <p class="col">id:{{product.id}}</p>
+
+    </div>
+    <p class="bg-danger p-1 d-inline-flex text-center " >Discount:{{Discount.second}}</p>
+    </div>
+  </div>
+</div>
+<br> -->

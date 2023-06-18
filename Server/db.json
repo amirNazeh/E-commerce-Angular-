@@ -1,0 +1,156 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "T-shirt",
+      "quantity": 5,
+      "price": 200,
+      "image": "../../assets/images/t-shirt.jpg",
+      "careogry": 1,
+      "discount": 20
+    },
+    {
+      "id": 2,
+      "name": "T-shirt",
+      "quantity": "5",
+      "price": "500",
+      "image": "https://bonobos-contentful.imgix.net/1zbm708fksg8/4BlfvMUxv4q68wParY7JrT/f5c2e672feb589cdbf3e74e0adfe25a8/APR-HP-Program-Tile-3-Desktop.jpg?auto=compress%2Cformat&fit=clip&cs=srgb&w=375&q=50&fm=pjpg",
+      "careogry": 1,
+      "discount": 30
+    },
+    {
+      "id": 3,
+      "name": "Shoes",
+      "quantity": 0,
+      "price": "200",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4lsflkwxrco-opKmSCbuIGyTgUGAwQPNsnA&usqp=CAU",
+      "careogry": 2,
+      "discount": 0
+    },
+    {
+      "id": 4,
+      "name": "Shoes",
+      "quantity": 2,
+      "price": 200,
+      "image": "https://m.media-amazon.com/images/I/7111YB9chNL._AC_SX500_.jpg",
+      "careogry": 2,
+      "discount": 0
+    },
+    {
+      "id": 6,
+      "name": "Watch",
+      "quantity": 3,
+      "price": 300,
+      "image": "https://m.media-amazon.com/images/I/717iCoio-eL._AC_UL320_.jpg",
+      "careogry": 3,
+      "discount": 0
+    },
+    {
+      "careogry": "1",
+      "name": "aaaads",
+      "image": "https://m.media-amazon.com/images/I/717iCoio-eL._AC_UL320_.jpg",
+      "price": "100",
+      "quantity": "5",
+      "id": 7
+    },
+    {
+      "careogry": "1",
+      "name": "aaaads",
+      "image": "https://m.media-amazon.com/images/I/717iCoio-eL._AC_UL320_.jpg",
+      "price": "100",
+      "quantity": "5",
+      "id": 8
+    },
+    {
+      "careogry": "1",
+      "name": "aaaads",
+      "image": "https://m.media-amazon.com/images/I/717iCoio-eL._AC_UL320_.jpg",
+      "price": "100",
+      "quantity": "5",
+      "id": 9
+    },
+    {
+      "careogry": "1",
+      "name": "aaaads",
+      "image": "https://m.media-amazon.com/images/I/717iCoio-eL._AC_UL320_.jpg",
+      "price": "100",
+      "quantity": "5",
+      "id": 10
+    },
+    {
+      "careogry": "1",
+      "name": "aaaads",
+      "image": "https://m.media-amazon.com/images/I/717iCoio-eL._AC_UL320_.jpg",
+      "price": "100",
+      "quantity": "5",
+      "id": 11
+    },
+    {
+      "careogry": "1",
+      "name": "aaaads",
+      "image": "https://m.media-amazon.com/images/I/717iCoio-eL._AC_UL320_.jpg",
+      "price": "100",
+      "quantity": "5",
+      "id": 12
+    },
+    {
+      "careogry": "1",
+      "name": "aaaads",
+      "image": "https://m.media-amazon.com/images/I/717iCoio-eL._AC_UL320_.jpg",
+      "price": "100",
+      "quantity": "5",
+      "id": 13
+    },
+    {
+      "careogry": "1",
+      "name": "aaaads",
+      "image": "https://m.media-amazon.com/images/I/717iCoio-eL._AC_UL320_.jpg",
+      "price": "100",
+      "quantity": "5",
+      "id": 14
+    }
+  ],
+  "catagory": [
+    {
+      "id": 1,
+      "name": "Clothes"
+    },
+    {
+      "id": 2,
+      "name": "Shoes"
+    },
+    {
+      "id": 3,
+      "name": "Accessorices"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullName": "ggg",
+      "email": "string",
+      "mobileNumber": "string",
+      "city": "string",
+      "postalCode": "string",
+      "street": "string"
+    },
+    {
+      "fullName": "ffffffffff",
+      "email": "amer@gmail.com",
+      "mobileNumber": "5555555555555555555",
+      "city": "ddddd",
+      "postalCode": "88888888888",
+      "street": "88888888888888888",
+      "id": 2
+    },
+    {
+      "fullName": "amer n",
+      "email": "amer@gmail.com",
+      "mobileNumber": "122222222222",
+      "city": "aaa",
+      "postalCode": "aff",
+      "street": "aaaaa",
+      "id": 3
+    }
+  ]
+}

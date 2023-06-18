@@ -1,0 +1,63 @@
+<div class="contaner">
+<div class="col-12  bootstrap snippets bootdeys">
+	<!-- product -->
+	<div class="product-content product-wrap clearfix">
+		<div class="row">
+				<div class="col-md-5 col-sm-12 col-xs-12">
+					<div class="product-image">
+						<img src="{{product?.image}}" alt="194x228" class="img-fluid">
+						<span class="tag2 hot">
+							HOT
+						</span>
+					</div>
+				</div>
+				<div class="col-md-7 col-sm-12 col-xs-12">
+				<div class="product-deatil">
+						<h3 class="name">
+							{{product?.name| uppercase }}
+						</h3>
+            <p class=" btn-danger p-1 mt-2" style="inline-size : fit-content;" *ngIf="product?.discount!>0">save {{product?.discount}}%</p>
+
+            <ng-container [ngSwitch]="product?.quantity">
+              <ng-container *ngSwitchCase="0"><p class="text-danger">Out of Stock</p></ng-container>
+              <ng-container *ngSwitchCase="1" class="bg-danger">last one item </ng-container>
+              <ng-container  *ngSwitchCase="2">last two item </ng-container>
+              <ng-container *ngSwitchDefault> in stock </ng-container>
+            </ng-container>
+						<p class="price-container">
+							<span>{{product?.price|currency:'EGP'}}</span>
+						</p>
+						<span class="tag1"></span>
+				</div>
+				<div class="description">
+					<p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
+				</div>
+				<div class="product-info smart-form m-auto">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<a href="javascript:void(0);" class="btn btn-success">Add to cart</a>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<div class="rating">
+								<label for="stars-rating-5"><i class="fa fa-star"></i></label>
+								<label for="stars-rating-4"><i class="fa fa-star"></i></label>
+								<label for="stars-rating-3"><i class="fa fa-star text-primary"></i></label>
+								<label for="stars-rating-2"><i class="fa fa-star text-primary"></i></label>
+								<label for="stars-rating-1"><i class="fa fa-star text-primary"></i></label>
+							</div>
+						</div>
+					</div>
+          <div class="col-md-6 col-sm-6 col-xs-6 mt-5 d-flex justify-content-end">
+            <button (click)="BackToHome()" class="btn btn-primary" >Back</button>
+          </div>
+
+          <div class="d-flex justify-content-center mt-5 pl-10" role="group" aria-label="Basic example">
+            <button class="border-0" (click)="prevFunc()" [disabled]="prdID==productIDSArr[0]"><i class="fa-solid fa-angles-left fs-4 text-primary"></i></button>
+            <button class="border-0" (click)="nextFunc()" [disabled]="prdID==productIDSArr[productIDSArr.length-1]"><i class="fa-solid fa-angles-right fs-4"></i></button>
+         </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end product -->
+

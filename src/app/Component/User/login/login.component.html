@@ -1,0 +1,240 @@
+<div class="row">
+  <div class="col-md-12">
+    <form action="index.html" method="post">
+      <h1>Sign Up</h1>
+
+      <form [formGroup]="userForm" (ngSubmit)="addUser()" #signupForm="ngForm">
+        <div class="form-group">
+          <label for="fullName">Full Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            placeholder="full Name (required)"
+            name="fullName"
+            formControlName="fullName"
+            [(ngModel)]="user.fullName"
+            [ngClass]="{
+              'is-invalid':
+                (fullName?.touched || fullName?.dirty) && !fullName?.valid
+            }"
+          />
+
+          <span class="invalid-feedback">
+            <span *ngIf="fullName?.errors?.['required']"
+              >Please enter full name</span
+            >
+            <span *ngIf="fullName?.errors?.['minlength']"
+              >First must be longer than 5 characters</span
+            >
+          </span>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email (required)"
+            formControlName="email"
+            [(ngModel)]="user.email"
+            [ngClass]="{
+              'is-invalid': (email?.touched || email?.dirty) && !email?.valid
+            }"
+          />
+
+          <span class="invalid-feedback">
+            <span *ngIf="email?.errors?.['required']">Please enter email</span>
+            <span *ngIf="email?.errors?.['email']">email must includ @</span>
+          </span>
+        </div>
+        <div>
+          <label for="mobileNumber">Number:</label>
+          <input
+            type="text"
+            id="mobileNumber"
+            name="mobileNumber"
+            placeholder="Number (required)"
+            [(ngModel)]="user.mobileNumber"
+            formControlName="mobileNumber"
+            [ngClass]="{
+              'is-invalid':
+                (mobileNumber?.touched || mobileNumber?.dirty) &&
+                !mobileNumber?.valid
+            }"
+          />
+
+          <span class="invalid-feedback">
+            <span *ngIf="mobileNumber?.errors?.['required']"
+              >Please enter Number</span
+            >
+            <span *ngIf="mobileNumber?.errors?.['minlength']"
+              >Number must be longer than 12 number</span
+            >
+          </span>
+        </div>
+        <div formArrayName="numbers">
+          <div *ngFor="let add of numbers.controls; let i = index">
+            <div [formGroupName]="i">
+              <label for="mobileNumber">Number:</label>
+              <input
+                type="text"
+                id="mobileNumber"
+                name="mobileNumber"
+                placeholder="Number (required)"
+                [(ngModel)]="user.mobileNumber"
+                formControlName="mobileNumber"
+                [ngClass]="{
+                  'is-invalid':
+                    (mobileNumber2?.touched || mobileNumber2?.dirty) &&
+                    !mobileNumber2?.valid
+                }"
+              />
+
+              <span class="invalid-feedback">
+                <span *ngIf="mobileNumber2?.errors?.['required']"
+                  >>Please enter Number</span
+                >
+                <span *ngIf="mobileNumber2?.errors?.['minlength']"
+                  >Number must be longer than 12 number</span
+                >
+              </span>
+              <button
+                type="button"
+                class="btn btn-danger p-1 w-auto"
+                (click)="removeNumber(i)"
+              >
+                remove
+              </button>
+            </div>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary p-1 w-auto"
+          (click)="addNumber2()"
+        >
+          Add Number
+        </button>
+
+        <!-- <label for="Number">Number:</label>
+          <input type="text" id="mobileNumber" name="mobileNumber"
+          placeholder="Number (required)"
+          formControlName="mobileNumber"
+           [ngClass]="{'is-invalid':(mobileNumber?.touched || mobileNumber?.dirty) && !mobileNumber?.valid}">
+
+          <span class="invalid-feedback">
+            <span *ngIf="mobileNumber?.errors?.['required']">Please enter email</span>
+            <span *ngIf="mobileNumber?.errors?.['minlength']">email must includ @</span>
+          </span>
+          <button type="button" class="btn btn-primary p-1 w-auto" (click)="addNumber()">Add Nember</button> -->
+
+        <div>
+          <label for="city">City:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            placeholder="city (required)"
+            name="city"
+            formControlName="city"
+            [(ngModel)]="user.city"
+            [ngClass]="{
+              'is-invalid': (city?.touched || city?.dirty) && !city?.valid
+            }"
+          />
+
+          <span class="invalid-feedback">
+            <span *ngIf="city?.errors?.['required']">Please enter city</span>
+          </span>
+        </div>
+        <div>
+          <label for="postalCode">Postal Code:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="postalCode"
+            placeholder="Postal Code (required)"
+            name="postalCode"
+            formControlName="postalCode"
+            [(ngModel)]="user.postalCode"
+            [ngClass]="{
+              'is-invalid':
+                (postalCode?.touched || postalCode?.dirty) && !postalCode?.valid
+            }"
+          />
+
+          <span class="invalid-feedback">
+            <span *ngIf="postalCode?.errors?.['required']"
+              >Please enter Postal Code</span
+            >
+          </span>
+        </div>
+
+        <div>
+          <label for="street">Street:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="street"
+            placeholder="street (required)"
+            name="street"
+            formControlName="street"
+            [(ngModel)]="user.street"
+            [ngClass]="{
+              'is-invalid': (street?.touched || street?.dirty) && !street?.valid
+            }"
+          />
+
+          <div formGroupName="passwordGroup">
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="password"
+                id="exampleInputPassword1"
+                formControlName="password"
+                [ngClass]="{ 'is-invalid': passwordMessage }"
+              />
+              <span class="invalid-feedback">
+                {{ passwordMessage }}
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >confirm Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                formControlName="confirmPassword"
+                placeholder="confirm password"
+                [ngClass]="{
+                  'is-invalid':
+                  userForm.get('passwordGroup')?.errors ||
+                    ((userForm.get('passwordGroup.confirmPassword')?.touched ||
+                    userForm.get('passwordGroup.confirmPassword')?.dirty) &&
+                      !userForm.get('passwordGroup.confirmPassword')?.valid)
+                }"
+              />
+              <span class="invalid-feedback">
+                <span
+                  *ngIf=" userForm.get('passwordGroup.confirmPassword')?.errors?.['required'] "
+                >
+                  please enter your confirm password
+                </span>
+                <span *ngIf=" userForm.get('passwordGroup')?.errors?.['match'] ">
+                  confirm password not same password
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<form  #signupForm="ngForm">
+    <div class="w-50 m-auto">
+      <div class="mb-2">
+        <label for="exampleInputEmail1" class="form-label">Category</label>
+  <select class="form-select mb-2" aria-label="Default select example" name="careogry"[(ngModel)]="product.careogry">
+    <option value="">All</option>
+    <option value="1">Clothes</option>
+    <option value="2">Shoes</option>
+    <option value="3">Accessorices</option>
+  </select>
+
+      </div>
+    <div class="mb-2">
+      <label for="exampleInputEmail1" class="form-label">product Name</label>
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="product.name" required
+      minlength="5"   #Name="ngModel"
+      [ngClass]="{'is-invalid':(Name.touched||Name.dirty) && !Name.valid}"/>
+
+      <span class="invalid-feedback">
+        <span *ngIf="Name.errors?.['required']">Please enter poduct Name</span>
+        <span *ngIf="Name.errors?.['minlength']">poduct name must be longer than 5 characters</span>
+      </span>
+    </div>
+    <div class="mb-2">
+      <label for="image" class="form-label">Image Url</label>
+      <input type="text" class="form-control" id="image" name="image" [(ngModel)]="product.image"
+      required minlength="10"   #image="ngModel"
+      [ngClass]="{'is-invalid':(image.touched||image.dirty) && !image.valid}"/>
+
+      <span class="invalid-feedback">
+        <span *ngIf="image.errors?.['required']">Please enter poduct image</span>
+        <span *ngIf="image.errors?.['minlength']">poduct image must be longer than 10 characters</span>
+      </span>
+    </div>
+    <div class="mb-2">
+      <label for="price" class="form-label">Price</label>
+      <input type="text" class="form-control" id="price" name="price" [(ngModel)]="product.price"
+      required   #price="ngModel"
+      [ngClass]="{'is-invalid':(price.touched||price.dirty) && !price.valid}"/>
+
+      <span class="invalid-feedback">
+        <span *ngIf="price.errors?.['required']">Please enter product price</span>
+      </span>
+    </div>
+    <div class="mb-2">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input type="text" class="form-control" id="quantity" name="quantity" [(ngModel)]="product.quantity"
+      required   #quantity="ngModel"
+      [ngClass]="{'is-invalid':(quantity.touched||quantity.dirty) && !quantity.valid}"/>
+
+      <span class="invalid-feedback">
+        <span *ngIf="quantity.errors?.['required']">Please enter product quantity</span>
+      </span>
+    </div>
+    <div class="mb-2">
+      <label for="details" class="form-label">Details</label>
+      <input type="details" class="form-control" id="details" name="details"[(ngModel)]="product.details">
+
+    </div>
+
+    <button type="submit" class="btn btn-primary m-2" (click)="editProduct()">Edit</button>
+    <button type="submit" class="btn btn-danger" (click)="deleteProduct()">delete</button>
+    </div>
+  </form>
